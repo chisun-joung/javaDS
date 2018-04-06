@@ -6,7 +6,7 @@ public class Main {
 
 
 
-    public static void display_list(CircularLinkedList l) {
+    public static void display_list(DoublyLinkedList l) {
         //
         System.out.print("[head]");
         for ( int i = 0; i < l.size(); i++)
@@ -21,7 +21,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        CircularLinkedList list = new CircularLinkedList();
+        DoublyLinkedList list = new DoublyLinkedList();
 
         for(int i = 0; i < 5; i++)
         {
@@ -35,8 +35,7 @@ public class Main {
         display_list(list);
         list.insert(3,4);
         display_list(list);
-        list.reverse();
-        display_list(list);
+
 
     }
 }
