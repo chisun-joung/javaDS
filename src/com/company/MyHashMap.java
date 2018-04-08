@@ -30,4 +30,41 @@ public class MyHashMap {
         node.next = tables[idx];
         tables[idx] = node;
     }
+
+    public int get(int key) {
+        int idx = hashFunc(key);
+        for (Node node = tables[idx]; node != null; node = node.next) {
+            if (node.key == key)
+                return node.value;
+        }
+        throw new RuntimeException();
+    }
+
+    public int remove(int key) {
+        int idx = hashFunc(key);
+        if (tables[idx] == null)
+            throw new RuntimeException();
+
+        Node prev = null;
+        Node cur = null;
+
+        for(cur=tables[idx]; cur !=null; cur = cur.next) {
+            if(cur.key == key )
+                break;
+            prev = cur;
+        }
+
+        if (cur == null)
+           throw new RuntimeException();
+
+        if(prev == null) {
+            tables[idx] = cur.next;
+            cur.next = null;
+            return cur.value;
+        }
+
+        prev.next = cur.next;
+        cur.next = null;
+        return cur.value;
+    }
 }
