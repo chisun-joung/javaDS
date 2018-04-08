@@ -2,6 +2,8 @@ package com.company;
 
 import java.io.IOException;
 
+import java.util.Random;
+
 public class Main {
 
 
@@ -20,6 +22,8 @@ public class Main {
         }
     }
 
+
+
     public static void main(String[] args) {
         DoublyLinkedList list = new DoublyLinkedList();
 
@@ -35,6 +39,19 @@ public class Main {
         display_list(list);
         list.insert(3,4);
         display_list(list);
+
+        MyHashMap hashMap = new MyHashMap();
+
+        for (int i = 0 ; i < 100 ; i++)
+        {
+            int r = new Random().nextInt();
+            hashMap.set(i,r);
+        }
+        for (int i = 0 ; i < 10 ; i++)
+        {
+            int key = new Random().nextInt(100);
+            System.out.printf("%d -> %d \n", key , hashMap.get(key) );
+        }
 
 
     }
