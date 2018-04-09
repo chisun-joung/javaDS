@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.IOException;
 
+import java.util.HashMap;
 import java.util.Random;
 
 public class Main {
@@ -53,6 +54,15 @@ public class Main {
             System.out.printf("%d -> %d \n", key , hashMap.get(key) );
         }
 
+        BTree tree = new BTree();
+        int [] a = { 1, 10, 7, 6, 3, 9, 2, 5, 8};
+        for(int i = 0; i < a.length; i++)
+            tree.insert(a[i]);
+
+
+        tree.preorder();
+        tree.inorder();
+        tree.postorder();
 
     }
 }
