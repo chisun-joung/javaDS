@@ -11,16 +11,16 @@ public class Main {
 
     public static void display_list(DoublyLinkedList l) {
         //
-        System.out.print("[head]");
+        System.out.print("\n[head]");
         for ( int i = 0; i < l.size(); i++)
             System.out.printf("->[%2d]",l.get(i));
         //
-         System.out.flush();
-        try{
-            System.in.read();
-        }catch (IOException e){
-
-        }
+//         System.out.flush();
+//        try{
+//            System.in.read();
+//        }catch (IOException e){
+//
+//        }
     }
 
 
@@ -51,7 +51,7 @@ public class Main {
         for (int i = 0 ; i < 10 ; i++)
         {
             int key = new Random().nextInt(100);
-            System.out.printf("%d -> %d \n", key , hashMap.get(key) );
+            System.out.printf("\n%d -> %d ", key , hashMap.get(key) );
         }
 
         BTree tree = new BTree();
@@ -64,5 +64,16 @@ public class Main {
         tree.inorder();
         tree.postorder();
 
+        if(tree.contains(10))
+            System.out.println("Tree has 10");
+
+        if(!tree.contains(11))
+            System.out.println("Tree doesn't have 11");
+
+
+        tree.remove(10);
+        tree.preorder();
+        tree.inorder();
+        tree.postorder();
     }
 }
